@@ -17,38 +17,37 @@ security:
 
         # used to reload user from session & other features (e.g. switch_user)
     firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+
+            # !!!! need restore if you want to add jwt auth
+#        main:
+#            anonymous: false
+#            stateless: true
+#            provider: app_user_provider
+#            json_login:
+#                check_path: /login
+#                username_path: email
+#                password_path: password
+#                success_handler: lexik_jwt_authentication.handler.authentication_success
+#                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+#            guard:
+#                authenticators:
+#                    - lexik_jwt_authentication.jwt_token_authenticator
+#        api:
+#            pattern: ^/api
+#            stateless: true
+#            anonymous: false
+#            provider: app_user_provider
+#            guard:
+#                authenticators:
+#                    - lexik_jwt_authentication.jwt_token_authenticator
 #        register:
 #            pattern: ^/register
 #            stateless: true
 #            anonymous: true
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-        main:
-            anonymous: false
-            stateless: true
-            provider: app_user_provider
-            json_login:
-                check_path: /login
-                username_path: email
-                password_path: password
-                success_handler: lexik_jwt_authentication.handler.authentication_success
-                failure_handler: lexik_jwt_authentication.handler.authentication_failure
-            guard:
-                authenticators:
-                    - lexik_jwt_authentication.jwt_token_authenticator
-        api:
-            pattern: ^/api
-            stateless: true
-            anonymous: false
-            provider: app_user_provider
-            guard:
-                authenticators:
-                    - lexik_jwt_authentication.jwt_token_authenticator
-        register:
-            pattern: ^/register
-            stateless: true
-            anonymous: true
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
