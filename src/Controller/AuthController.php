@@ -38,10 +38,10 @@ class AuthController extends AbstractController
      * api route redirects
      * @return Response
      */
-//    public function api()
-//    {
-//        return new Response(sprintf("Logged in as %s", $this->getUser()->getUsername()));
-//    }
+    public function api()
+    {
+        return new Response(sprintf("Logged in as %s", $this->getUser()->getUsername()));
+    }
 
     /**
      * Register new user
