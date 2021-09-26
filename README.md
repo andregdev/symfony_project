@@ -14,5 +14,6 @@ symfony console make:entity Attributes
 
 Set api platform with JWT authentication
 https://www.leaseweb.com/labs/2019/06/create-jwt-authentication-api-platform/
+https://github.com/lexik/LexikJWTAuthenticationBundle/blob/master/Resources/doc/index.md#generate-the-ssh-keys- use jwt
 
 run http://localhost:8080/
